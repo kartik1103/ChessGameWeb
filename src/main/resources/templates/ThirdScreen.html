@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>Chess website</title>
+</head>
+<body>
+
+<a th:href="@{'/OpponentDetails/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Reload Opponents Details
+</a>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th> playerName </th>
+    <th> playerRating    </th>
+    <th>  noOfTournamentsPlayed    </th>
+    <th> playedWithColour</th>
+    <th> opponents Id</th>
+    <th> result  </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="details: ${opponentDetails}">
+    <td th:text="${details.playerName}"></td>
+    <td th:text="${details.playerRating}"></td>
+    <td th:text="${details.noOfTournamentsPlayed}"></td>
+    <td th:text="${details.playedWithColour}"></td>
+    <td th:text="${details.opponentsId}"></td>
+    <td th:text="${details.result}"></td>
+  </tr>
+
+  </tbody>
+
+</table>
+
+<a th:href="@{'/chessPlayer/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Players List
+</a>
+
+<a th:href="@{'/tournamentList/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  All tournament list
+</a>
+
+</body>
+</html>

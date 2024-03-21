@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>Chess website</title>
+</head>
+<body>
+
+<a th:href="@{'/tournamentList/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Reload Tournament List
+</a>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th> tournamentId </th>
+    <th> Tournament Name    </th>
+    <th> Tournament Location    </th>
+    <th> Tournament Total Matches</th>
+    <th> Tournament Matches Won </th>
+    <th> Tournament Matches Lost</th>
+    <th> Tournament Matches Drawn </th>
+    <th> Net Points</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="game: ${games}">
+    <td th:text="${game.tournamentId}"></td>
+    <td th:text="${game.tournamentName}"></td>
+    <td th:text="${game.tournamentLocation}"></td>
+    <td th:text="${game.tournamentTotalMatches}"></td>
+    <td th:text="${game.tournamentMatchesWon}"></td>
+    <td th:text="${game.tournamentMatchesLost}"></td>
+    <td th:text="${game.tournamentMatchesDrawn}"></td>
+    <td th:text="${game.netPoints}"></td>
+
+  </tr>
+
+  </tbody>
+
+</table>
+
+<a th:href="@{'/chessPlayer/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Players List
+</a>
+
+<a th:href="@{'/OpponentDetails/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Opponent list
+</a>
+
+</body>
+</html>

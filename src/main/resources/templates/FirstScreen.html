@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>Chess website</title>
+</head>
+<body>
+
+<a th:href="@{'/chessPlayer/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Reload Players List
+</a>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th> Chess Id </th>
+    <th> Player Name    </th>
+    <th>  Player Rating    </th>
+    <th> Number of tournaments Played</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="player: ${chessPlayers}">
+    <td th:text="${player.chessId}"></td>
+    <td th:text="${player.playerName}"></td>
+    <td th:text="${player.playerRating}"></td>
+    <td th:text="${player.noOfTournamentsPlayed}"></td>
+  </tbody>
+
+</table>
+
+<a th:href="@{'/tournamentList/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  All tournament list
+</a>
+
+<a th:href="@{'/OpponentDetails/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Opponent list
+</a>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>Chess website</title>
+</head>
+<body>
+
+<h2> Welcome to the Chess website</h2>
+
+<a th:href="@{'/chessPlayer/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+   Players List
+</a>
+
+<a th:href="@{'/tournamentList/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  All tournament list
+</a>
+
+<a th:href="@{'/OpponentDetails/alldata'}"
+   class="btn btn-primary btn-sm mb-3">
+  Opponent list
+</a>
+
+</body>
+</html>
